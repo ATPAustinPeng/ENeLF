@@ -1,0 +1,6 @@
+[submodule "MobileR2L"]
+	path = MobileR2L
+	url = git@github.com:ATPAustinPeng/MobileR2L.git
+[submodule "nerf"]
+	path = nerf
+	url = git@github.com:bmild/nerf.git
