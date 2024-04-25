@@ -122,7 +122,7 @@ python3 train.py \
     --save_pseudo_path Pseudo/lego --num_gpu 1
 ```
 
-## Train MobileR2L
+## Train MobileR2L On Realistic Synthetic 360 (aka NeRF)
 - `salloc --gres=gpu:H100:4 --mem=64GB --ntasks-per-node=12 --time=0-04:00:00`
 	- the optimal configuration I could request reasonably from PACE
 
@@ -135,15 +135,36 @@ conda deactivate
 
 conda activate r2l
 
-# use 4 gpus for training: NeRF
+# use 4 gpus for training - ckpts will be found in logs/Experiments/.../weights/ckpt.tar
 sh pace-script/benchmarking_nerf.sh 4 lego
 
 # train from checkpoint
-sh pace-script/benchmarking_nerf_from_ckpt.sh 4 lego [FULL_CKPT_PATH]
+sh pace-script/benchmarking_nerf_from_ckpt.sh [NUM_GPUS] [SCENE] [CKPT_PATH]
 
-# # render from checkpoint
+# render from checkpoint
 # sh pace-script/benchmarking_pruned_nerf_from_ckpt.sh 4 lego [FULL_UNPRUNED_CKPT_PATH]
 
 # use 4 gpus for training: LLFF
 #sh script/benchmarking_llff.sh 4 orchids
+```
+
+# Prune MobileR2L
+- must have pretrained MobileR2L ckpt from above step
+```bash
+# prune model - save cfg, cfg_mask, model ckpt
+sh pace-script/prune_nerf.sh [NUM_GPUS] [SCENE] [PRETRAINED_MODEL_CKPT] [PRUNE_PERCENTAGE]
+
+# retrain pruned model - load cfg, cfg_mask, model_ckpt
+sh pace-script/retrain_pruned_model.sh [NUM_GPUS] [SCENE] [PRUNED_MODEL_CKPT]
+```
+
+## Get Model Info
+- get original model info (# parameters, FLOPs, storage)
+```bash
+sh pace-script/get_original_model_info.sh [NUM_GPUS] [SCENE] [CKPT_PATH]
+```
+
+- get pruned model info (# parameters, FLOPs, storage)
+```bash
+sh pace-script/get_pruned_model_info.sh [NUM_GPUS] [SCENE] [CKPT_PATH] [PRUNE_PERCENTAGE]
 ```
