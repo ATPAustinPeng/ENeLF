@@ -8,6 +8,9 @@ cd SENeLF
 git submodule update --init --recursive
 ```
 
+- Note: I updated the majority of the code in my fork of MobileR2L.
+    - https://github.com/ATPAustinPeng/MobileR2L
+
 ## Steps To Replicating My Results
 1. downloading data
 2. creating environments (2 total)
