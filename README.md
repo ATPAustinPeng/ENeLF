@@ -1,6 +1,6 @@
-# SENeLF
+# ENeLF
 
-# Getting The Source Code
+## Getting The Source Code
 ```
 # clone repo and pull submodules
 git clone https://github.com/ATPAustinPeng/SENeLF
@@ -8,22 +8,24 @@ cd SENeLF
 git submodule update --init --recursive
 ```
 
-# Steps To Replicating My Results
+## Steps To Replicating My Results
 1. downloading data
 2. creating environments (2 total)
 3. train teacher model with instant-ngp
 4. data distillation with trained teacher model
-5. train MobileR2L
+5. train ENeLF
+6. prune ENeLF
+7. export ENeLF
 
-## Downloading Data
+### Downloading Data
 - example data (only synthetic360 lego & rff fern)
     - `sh script/download_example_data.sh`
 - all data
     - Google Drive provided by NeRF authors https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1
     - `scp` files into MobileR2L/dataset and unzip with `unzip [ZIP_FILE_NAME]`
 
-## Creating Environments
-### MobileR2L/ENeLF
+### Creating Environments
+#### MobileR2L/ENeLF
 ```bash
 # enter MobileR2L directory
 cd MobileR2L
@@ -39,7 +41,7 @@ pip install -r requirements.txt
 conda deactivate
 ```
 
-### Instant-NGP
+#### Instant-NGP
 - Note, I found this environment very difficult to setup. I only have it working on:
     - A100 GPU, CUDA 11.7, SM80 (compute capability)
 - Grab a GPU before performing environment setup
@@ -98,7 +100,7 @@ pip install models/csrc/
 cd ../../../
 ```
 
-## Train Teacher Model
+### Train Teacher Model
 ```bash
 cd model/teacher/ngp_pl
 
@@ -110,7 +112,7 @@ python3 train.py \
      --num_gpu 1
 ```
 
-## Data Distillation With Trained Teacher Model
+### Data Distillation With Trained Teacher Model
 ```bash
 export ROOT_DIR=../../../dataset/nerf_synthetic/
 python3 train.py \
@@ -122,7 +124,7 @@ python3 train.py \
     --save_pseudo_path Pseudo/lego --num_gpu 1
 ```
 
-## Train ENeLF On Realistic Synthetic 360 (aka NeRF)
+### Train ENeLF On Realistic Synthetic 360 (aka NeRF)
 - `salloc --gres=gpu:H100:4 --mem=64GB --ntasks-per-node=12 --time=0-04:00:00`
 	- the optimal configuration I could request reasonably from PACE
 
@@ -148,7 +150,7 @@ sh pace-script/benchmarking_nerf_from_ckpt.sh [NUM_GPUS] [SCENE] [CKPT_PATH]
 #sh script/benchmarking_llff.sh 4 orchids
 ```
 
-# Prune ENeLF
+### Prune ENeLF
 - must have pretrained MobileR2L ckpt from above step
 ```bash
 # prune model - save cfg, cfg_mask, model ckpt
@@ -158,22 +160,18 @@ sh pace-script/prune_nerf.sh [NUM_GPUS] [SCENE] [PRETRAINED_MODEL_CKPT] [PRUNE_P
 sh pace-script/retrain_pruned_model.sh [NUM_GPUS] [SCENE] [PRUNED_MODEL_CKPT]
 ```
 
-# Export ENeLF
+### Export ENeLF
 ```bash
 # exports pruned model
 # Note: saves to PRUNED_BEST_CKPT path!
 sbatch pace-script/export_pruned_model.sh [NUM_GPUS] [SCENE] [PRUNED_BEST_CKPT]
 
-# sbatch pace-script/export_pruned_model.sh 4 chair /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/early-pruned-chair/chair-pruned_Train-[2024-04-24@15:40:49]/weights/best_ckpt.tar
-
 # exports original model - unpruned
 # Note: saves to ORIGINAL_BEST_CKPT path!
 sbatch pace-script/export_model.sh [NUM_GPUS] [SCENE] [ORIGINAL_BEST_CKPT]
-
-# sbatch pace-script/export_model.sh 4 lego /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/pretrained_mobiler2l/lego_Train-[2024-04-24@14:47:35]/weights/best_ckpt.tar
 ```
 
-## Get Model Info
+### HELPFUL/OPTIONAL - Get Model Info
 - get original model info (# parameters, FLOPs, storage)
 ```bash
 sh pace-script/get_original_model_info.sh [NUM_GPUS] [SCENE] [CKPT_PATH]
