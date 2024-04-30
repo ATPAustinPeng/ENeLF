@@ -23,7 +23,7 @@ git submodule update --init --recursive
     - `scp` files into MobileR2L/dataset and unzip with `unzip [ZIP_FILE_NAME]`
 
 ## Creating Environments
-### MobileR2L
+### MobileR2L/ENeLF
 ```bash
 # enter MobileR2L directory
 cd MobileR2L
@@ -122,7 +122,7 @@ python3 train.py \
     --save_pseudo_path Pseudo/lego --num_gpu 1
 ```
 
-## Train MobileR2L On Realistic Synthetic 360 (aka NeRF)
+## Train ENeLF On Realistic Synthetic 360 (aka NeRF)
 - `salloc --gres=gpu:H100:4 --mem=64GB --ntasks-per-node=12 --time=0-04:00:00`
 	- the optimal configuration I could request reasonably from PACE
 
@@ -148,7 +148,7 @@ sh pace-script/benchmarking_nerf_from_ckpt.sh [NUM_GPUS] [SCENE] [CKPT_PATH]
 #sh script/benchmarking_llff.sh 4 orchids
 ```
 
-# Prune MobileR2L
+# Prune ENeLF
 - must have pretrained MobileR2L ckpt from above step
 ```bash
 # prune model - save cfg, cfg_mask, model ckpt
@@ -156,6 +156,21 @@ sh pace-script/prune_nerf.sh [NUM_GPUS] [SCENE] [PRETRAINED_MODEL_CKPT] [PRUNE_P
 
 # retrain pruned model - load cfg, cfg_mask, model_ckpt
 sh pace-script/retrain_pruned_model.sh [NUM_GPUS] [SCENE] [PRUNED_MODEL_CKPT]
+```
+
+# Export ENeLF
+```bash
+# exports pruned model
+# Note: saves to PRUNED_BEST_CKPT path!
+sbatch pace-script/export_pruned_model.sh [NUM_GPUS] [SCENE] [PRUNED_BEST_CKPT]
+
+# sbatch pace-script/export_pruned_model.sh 4 chair /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/early-pruned-chair/chair-pruned_Train-[2024-04-24@15:40:49]/weights/best_ckpt.tar
+
+# exports original model - unpruned
+# Note: saves to ORIGINAL_BEST_CKPT path!
+sbatch pace-script/export_model.sh [NUM_GPUS] [SCENE] [ORIGINAL_BEST_CKPT]
+
+# sbatch pace-script/export_model.sh 4 lego /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/pretrained_mobiler2l/lego_Train-[2024-04-24@14:47:35]/weights/best_ckpt.tar
 ```
 
 ## Get Model Info
