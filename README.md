@@ -3,12 +3,12 @@
 ## Getting The Source Code
 ```
 # clone repo and pull submodules
-git clone https://github.com/ATPAustinPeng/SENeLF
-cd SENeLF
+git clone https://github.com/ATPAustinPeng/ENeLF
+cd ENeLF
 git submodule update --init --recursive
 ```
 
-- Note: I updated the majority of the code in my fork of MobileR2L.
+- Note: I updated most of the code in my fork of MobileR2L.
     - https://github.com/ATPAustinPeng/MobileR2L
 
 ## Steps To Replicating My Results
