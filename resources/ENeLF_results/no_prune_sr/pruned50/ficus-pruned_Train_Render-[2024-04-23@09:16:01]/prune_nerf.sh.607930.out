@@ -1,0 +1,1265 @@
+---------------------------------------
+Begin Slurm Prolog: Apr-23-2024 12:13:22
+Job ID:    607930
+User ID:   apeng39
+Account:   coc
+Job name:  prune_nerf.sh
+Partition: ice-gpu
+---------------------------------------
+{'project_name': 'ficus-pruned', 'dataset_type': 'Blender', 'pseudo_dir': 'model/teacher/ngp_pl/Pseudo/ficus', 'root_dir': 'dataset/nerf_synthetic', 'run_train': True, 'run_render': True, 'num_workers': 12, 'batch_size': 10, 'num_iters': 80000, 'input_height': 100, 'input_width': 100, 'output_height': 800, 'output_width': 800, 'scene': 'ficus', 'i_weights': 1000, 'i_testset': 60000, 'i_save_rendering': 10000, 'i_video': 60000, 'amp': True, 'lrate': 0.0005, 'prune_percentage': 50, 'ckpt_dir': '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar', 'resume': True, 'ff': False, 'ndc': False, 'testskip': 8, 'factor': 4, 'llffhold': 8, 'bd_factor': 0.75, 'camera_convention': 'openGL', 'render_test': False, 'finetune': False, 'perturb': True, 'num_epochs': 500000, 'lr_scale': 1.0, 'lrate_decay': 500, 'warmup_lr': '0.0001,200', 'lpips_net': 'alex', 'export_onnx': False, 'debug': False, 'no_cache': False, 'convert_snap_gelu': True, 'get_pruned_info': False, 'get_info': False, 'n_sample_per_ray': 8, 'multires': 6, 'num_sr_blocks': 3, 'num_conv_layers': 2, 'sr_kernel': (64, 64, 16), 'netdepth': 60, 'netwidth': 256, 'activation_fn': 'gelu', 'use_sr_module': True, 'i_print': 10000, 'train_image_log_step': 5000}{'project_name': 'ficus-pruned', 'dataset_type': 'Blender', 'pseudo_dir': 'model/teacher/ngp_pl/Pseudo/ficus', 'root_dir': 'dataset/nerf_synthetic', 'run_train': True, 'run_render': True, 'num_workers': 12, 'batch_size': 10, 'num_iters': 80000, 'input_height': 100, 'input_width': 100, 'output_height': 800, 'output_width': 800, 'scene': 'ficus', 'i_weights': 1000, 'i_testset': 60000, 'i_save_rendering': 10000, 'i_video': 60000, 'amp': True, 'lrate': 0.0005, 'prune_percentage': 50, 'ckpt_dir': '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar', 'resume': True, 'ff': False, 'ndc': False, 'testskip': 8, 'factor': 4, 'llffhold': 8, 'bd_factor': 0.75, 'camera_convention': 'openGL', 'render_test': False, 'finetune': False, 'perturb': True, 'num_epochs': 500000, 'lr_scale': 1.0, 'lrate_decay': 500, 'warmup_lr': '0.0001,200', 'lpips_net': 'alex', 'export_onnx': False, 'debug': False, 'no_cache': False, 'convert_snap_gelu': True, 'get_pruned_info': False, 'get_info': False, 'n_sample_per_ray': 8, 'multires': 6, 'num_sr_blocks': 3, 'num_conv_layers': 2, 'sr_kernel': (64, 64, 16), 'netdepth': 60, 'netwidth': 256, 'activation_fn': 'gelu', 'use_sr_module': True, 'i_print': 10000, 'train_image_log_step': 5000}
+{'project_name': 'ficus-pruned', 'dataset_type': 'Blender', 'pseudo_dir': 'model/teacher/ngp_pl/Pseudo/ficus', 'root_dir': 'dataset/nerf_synthetic', 'run_train': True, 'run_render': True, 'num_workers': 12, 'batch_size': 10, 'num_iters': 80000, 'input_height': 100, 'input_width': 100, 'output_height': 800, 'output_width': 800, 'scene': 'ficus', 'i_weights': 1000, 'i_testset': 60000, 'i_save_rendering': 10000, 'i_video': 60000, 'amp': True, 'lrate': 0.0005, 'prune_percentage': 50, 'ckpt_dir': '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar', 'resume': True, 'ff': False, 'ndc': False, 'testskip': 8, 'factor': 4, 'llffhold': 8, 'bd_factor': 0.75, 'camera_convention': 'openGL', 'render_test': False, 'finetune': False, 'perturb': True, 'num_epochs': 500000, 'lr_scale': 1.0, 'lrate_decay': 500, 'warmup_lr': '0.0001,200', 'lpips_net': 'alex', 'export_onnx': False, 'debug': False, 'no_cache': False, 'convert_snap_gelu': True, 'get_pruned_info': False, 'get_info': False, 'n_sample_per_ray': 8, 'multires': 6, 'num_sr_blocks': 3, 'num_conv_layers': 2, 'sr_kernel': (64, 64, 16), 'netdepth': 60, 'netwidth': 256, 'activation_fn': 'gelu', 'use_sr_module': True, 'i_print': 10000, 'train_image_log_step': 5000}
+{'project_name': 'ficus-pruned', 'dataset_type': 'Blender', 'pseudo_dir': 'model/teacher/ngp_pl/Pseudo/ficus', 'root_dir': 'dataset/nerf_synthetic', 'run_train': True, 'run_render': True, 'num_workers': 12, 'batch_size': 10, 'num_iters': 80000, 'input_height': 100, 'input_width': 100, 'output_height': 800, 'output_width': 800, 'scene': 'ficus', 'i_weights': 1000, 'i_testset': 60000, 'i_save_rendering': 10000, 'i_video': 60000, 'amp': True, 'lrate': 0.0005, 'prune_percentage': 50, 'ckpt_dir': '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar', 'resume': True, 'ff': False, 'ndc': False, 'testskip': 8, 'factor': 4, 'llffhold': 8, 'bd_factor': 0.75, 'camera_convention': 'openGL', 'render_test': False, 'finetune': False, 'perturb': True, 'num_epochs': 500000, 'lr_scale': 1.0, 'lrate_decay': 500, 'warmup_lr': '0.0001,200', 'lpips_net': 'alex', 'export_onnx': False, 'debug': False, 'no_cache': False, 'convert_snap_gelu': True, 'get_pruned_info': False, 'get_info': False, 'n_sample_per_ray': 8, 'multires': 6, 'num_sr_blocks': 3, 'num_conv_layers': 2, 'sr_kernel': (64, 64, 16), 'netdepth': 60, 'netwidth': 256, 'activation_fn': 'gelu', 'use_sr_module': True, 'i_print': 10000, 'train_image_log_step': 5000}0
+1
+  3..........2 
+
+ ..........
+
+| distributed init (rank 0)
+| distributed init (rank 1)| distributed init (rank 2)| distributed init (rank 3)
+
+
+{{{{'activation_fn': 'activation_fn''gelu': ,
+ 'gelu''amp',
+ 'activation_fn': 'amp': True: 'gelu',
+ 'activation_fn'True,
+ 'batch_size': ,
+ 'amp': 'gelu''batch_size': 10,
+ : True,
+ 'amp'10,
+ 'bd_factor': ,
+ 'batch_size': True'bd_factor': 0.75,
+ : 10,
+ 'batch_size'0.75,
+ 'camera_convention': ,
+ 'bd_factor': 10'camera_convention': 'openGL',
+ : 0.75,
+ 'bd_factor''openGL',
+ 'ckpt_dir': ,
+ 'camera_convention': 0.75'ckpt_dir': ,
+ : 'openGL''camera_convention',
+ : 'ckpt_dir''openGL': ,
+ 'ckpt_dir': '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar',
+ '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar''convert_snap_gelu',
+ : 'convert_snap_gelu'True: '/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar',
+ True'/home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar',
+ 'dataset_type',
+ ,
+ 'convert_snap_gelu': 'dataset_type''convert_snap_gelu': 'Blender': : True,
+ 'Blender'True,
+ 'debug',
+ ,
+ 'dataset_type': 'debug''dataset_type': False: : 'Blender',
+ False'Blender',
+ 'dist_backend',
+ ,
+ 'debug': 'dist_backend''debug': 'nccl': : False,
+ 'nccl'False,
+ 'distributed',
+ ,
+ 'dist_backend': 'distributed''dist_backend': True: : 'nccl',
+ True'nccl',
+ 'export_onnx',
+ ,
+ 'distributed': 'export_onnx''distributed': False: : True,
+ FalseTrue,
+ 'factor',
+ ,
+ 'export_onnx': 'factor''export_onnx': 4: : False,
+ 4False,
+ 'ff',
+ ,
+ 'factor': 'ff''factor': False: : 4,
+ False4,
+ 'finetune',
+ ,
+ 'ff': 'finetune''ff': False: : False,
+ FalseFalse,
+ 'get_info',
+ ,
+ 'finetune': 'get_info''finetune': False: : False,
+ FalseFalse,
+ 'get_pruned_info',
+ ,
+ 'get_info': 'get_pruned_info''get_info': False: : False,
+ FalseFalse,
+ 'gpu',
+ ,
+ 'get_pruned_info': 'gpu''get_pruned_info': 2: : False,
+ 3False,
+ 'i_print',
+ ,
+ 'gpu': 'i_print''gpu': 10000: : 0,
+ 100001,
+ 'i_save_rendering',
+ ,
+ 'i_print': 'i_save_rendering''i_print': 10000: : 10000,
+ 1000010000,
+ 'i_testset',
+ ,
+ 'i_save_rendering': 'i_testset''i_save_rendering': 60000: : 10000,
+ 6000010000,
+ 'i_video',
+ ,
+ 'i_testset': 'i_video''i_testset': 60000: : 60000,
+ 6000060000,
+ 'i_weights',
+ ,
+ 'i_video': 'i_weights''i_video': 1000: : 60000,
+ 100060000,
+ 'input_height',
+ ,
+ 'i_weights': 'input_height''i_weights': 100: : 1000,
+ 1001000,
+ 'input_width',
+ ,
+ 'input_height': 'input_width''input_height': 100: : 100,
+ 100100,
+ 'llffhold',
+ ,
+ 'input_width': 'llffhold''input_width': 8: : 100,
+ 8100,
+ 'lpips_net',
+ ,
+ 'llffhold': 'lpips_net''llffhold': 'alex': : 8,
+ 'alex'8,
+ 'lr_scale',
+ ,
+ 'lpips_net': 'lr_scale''lpips_net': 1.0: : 'alex',
+ 1.0'alex',
+ 'lrate',
+ ,
+ 'lr_scale': 'lrate''lr_scale': 0.0005: : 1.0,
+ 0.00051.0,
+ 'lrate_decay',
+ ,
+ 'lrate': 'lrate_decay''lrate': 500: : 0.0005,
+ 5000.0005,
+ 'multires',
+ ,
+ 'lrate_decay': 'multires''lrate_decay': 6: : 500,
+ 6500,
+ 'n_sample_per_ray',
+ ,
+ 'multires': 'n_sample_per_ray''multires': 8: : 6,
+ 86,
+ 'ndc',
+ ,
+ 'n_sample_per_ray': 'ndc''n_sample_per_ray': False: : 8,
+ False8,
+ 'netdepth',
+ ,
+ 'ndc': 'netdepth''ndc': 60: : False,
+ 60False,
+ 'netwidth',
+ ,
+ 'netdepth': 'netwidth''netdepth': 256: : 60,
+ 25660,
+ 'no_cache',
+ ,
+ 'netwidth': 'no_cache''netwidth': False: : 256,
+ False256,
+ 'num_conv_layers',
+ ,
+ 'no_cache': 'num_conv_layers''no_cache': 2: : False,
+ 2False,
+ 'num_epochs',
+ ,
+ 'num_conv_layers': 'num_epochs''num_conv_layers': 500000: : 2,
+ 5000002,
+ 'num_iters',
+ ,
+ 'num_epochs': 'num_iters''num_epochs': 80000: : 500000,
+ 80000500000,
+ 'num_sr_blocks',
+ ,
+ 'num_iters': 'num_sr_blocks''num_iters': 3: : 80000,
+ 380000,
+ 'num_workers',
+ ,
+ 'num_sr_blocks': 'num_workers''num_sr_blocks': 12: : 3,
+ 123,
+ 'output_height',
+ ,
+ 'num_workers': 'output_height''num_workers': 800: : 12,
+ 80012,
+ 'output_width',
+ ,
+ 'output_height': 'output_width''output_height': 800: : 800,
+ 800800,
+ 'perturb',
+ ,
+ 'output_width': 'perturb''output_width': True: : 800,
+ True800,
+ 'project_name',
+ ,
+ 'perturb': 'project_name''perturb': 'ficus-pruned': : True,
+ 'ficus-pruned'True,
+ 'prune_percentage',
+ ,
+ 'project_name': 'prune_percentage''project_name': 50: : 'ficus-pruned',
+ 50'ficus-pruned',
+ 'pseudo_dir',
+ ,
+ 'prune_percentage': 'pseudo_dir''prune_percentage': 'model/teacher/ngp_pl/Pseudo/ficus': : 50,
+ 'model/teacher/ngp_pl/Pseudo/ficus'50,
+ 'rank',
+ ,
+ 'pseudo_dir': 'rank''pseudo_dir': 2: : 'model/teacher/ngp_pl/Pseudo/ficus',
+ 3'model/teacher/ngp_pl/Pseudo/ficus',
+ 'render_test',
+ ,
+ 'rank': 'render_test''rank': False: : 0,
+ False1,
+ 'resume',
+ ,
+ 'render_test': 'resume''render_test': True: : False,
+ TrueFalse,
+ 'root_dir',
+ ,
+ 'resume': 'root_dir''resume': 'dataset/nerf_synthetic': : True,
+ 'dataset/nerf_synthetic'True,
+ 'run_render',
+ ,
+ 'root_dir': 'run_render''root_dir': True: : 'dataset/nerf_synthetic',
+ True'dataset/nerf_synthetic',
+ 'run_train',
+ ,
+ 'run_render': 'run_train''run_render': True: : True,
+ TrueTrue,
+ 'scene',
+ ,
+ 'run_train': 'scene''run_train': 'ficus': : True,
+ 'ficus'True,
+ 'sr_kernel',
+ ,
+ 'scene': 'sr_kernel''scene': : (64, 64, 16): 'ficus',
+ (64, 64, 16)'ficus',
+ 'testskip',
+ ,
+ 'sr_kernel': 'testskip''sr_kernel': 8: : ,
+ (64, 64, 16)8'train_image_log_step'(64, 64, 16),
+ ,
+ : ,
+ 'testskip''train_image_log_step'5000'testskip': : ,
+ : 85000'use_sr_module'8,
+ ,
+ : ,
+ 'train_image_log_step''use_sr_module'True'train_image_log_step': : ,
+ : 5000True'warmup_lr'5000,
+ ,
+ : ,
+ 'use_sr_module''warmup_lr''0.0001,200''use_sr_module': : ,
+ : True'0.0001,200''world_size'True,
+ ,
+ : ,
+ 'warmup_lr''world_size'4'warmup_lr': : }: '0.0001,200'4
+'0.0001,200',
+ },
+ 'world_size'
+'world_size': : 44}}
+
+INFO:model.engine:Backup the code to caches.
+INFO:model.engine:[Rank 0]: Using Distributed Data Parallel.
+INFO:model.engine:[Rank 2]: Using Distributed Data Parallel.INFO:model.engine:[Rank 3]: Using Distributed Data Parallel.INFO:model.engine:[Rank 1]: Using Distributed Data Parallel.
+
+
+INFO:model.engine:model dataparallel: TrueINFO:model.engine:model dataparallel: TrueINFO:model.engine:model dataparallel: TrueINFO:model.engine:model dataparallel: True
+
+
+
+INFO:model.engine:weight dataparallel: TrueINFO:model.engine:weight dataparallel: True
+INFO:model.engine:weight dataparallel: True
+INFO:model.engine:weight dataparallel: True
+
+INFO:model.engine:[Rank 0]: Loadded checkpoint /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar
+INFO:model.engine:[Rank 3]: Loadded checkpoint /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tarINFO:model.engine:[Rank 2]: Loadded checkpoint /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar
+INFO:model.engine:[Rank 1]: Loadded checkpoint /home/hice1/apeng39/scratch/SENeLF/MobileR2L/logs/Experiments/ficus_Train-[2024-04-20@16:19:04]/pruning50/ckpt.tar
+
+INFO:model.engine:[Rank 0]:Resume optimizer successfully.
+INFO:model.engine:[Rank 3]:Resume optimizer successfully.INFO:model.engine:[Rank 2]:Resume optimizer successfully.
+
+INFO:model.engine:[Rank 1]:Resume optimizer successfully.
+Setting up [LPIPS] perceptual loss: trunk [alex], v[0.1], spatial [off]
+Loading model from: /home/hice1/apeng39/.conda/envs/r2l/lib/python3.9/site-packages/lpips/weights/v0.1/alex.pth
+INFO:__main__:Starting rendering. 
+INFO:__main__:Starting rendering. 
+INFO:__main__:Starting rendering. 
+
+
+
+INFO:__main__:Starting rendering. 
+
+INFO:__main__:Calculate pruning config.
+INFO:__main__:Calculate pruning config.
+
+
+INFO:__main__:Calculate pruning config.
+
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:__main__:layer index: 8 	 total channel: 256 	 remaining channel: 28INFO:__main__:layer index: 8 	 total channel: 256 	 remaining channel: 28INFO:__main__:layer index: 8 	 total channel: 256 	 remaining channel: 28
+
+
+INFO:__main__:layer index: 11 	 total channel: 256 	 remaining channel: 140INFO:__main__:layer index: 11 	 total channel: 256 	 remaining channel: 140
+
+INFO:__main__:layer index: 11 	 total channel: 256 	 remaining channel: 140
+INFO:__main__:layer index: 15 	 total channel: 256 	 remaining channel: 31INFO:__main__:layer index: 15 	 total channel: 256 	 remaining channel: 31
+
+INFO:__main__:layer index: 15 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 18 	 total channel: 256 	 remaining channel: 112INFO:__main__:layer index: 18 	 total channel: 256 	 remaining channel: 112
+
+INFO:__main__:layer index: 18 	 total channel: 256 	 remaining channel: 112
+INFO:__main__:layer index: 22 	 total channel: 256 	 remaining channel: 20INFO:__main__:layer index: 22 	 total channel: 256 	 remaining channel: 20
+
+INFO:__main__:layer index: 22 	 total channel: 256 	 remaining channel: 20
+INFO:__main__:layer index: 25 	 total channel: 256 	 remaining channel: 154INFO:__main__:layer index: 25 	 total channel: 256 	 remaining channel: 154
+
+INFO:__main__:layer index: 25 	 total channel: 256 	 remaining channel: 154
+INFO:__main__:layer index: 29 	 total channel: 256 	 remaining channel: 19INFO:__main__:layer index: 29 	 total channel: 256 	 remaining channel: 19
+
+INFO:__main__:layer index: 29 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 32 	 total channel: 256 	 remaining channel: 202
+INFO:__main__:layer index: 32 	 total channel: 256 	 remaining channel: 202
+INFO:__main__:layer index: 32 	 total channel: 256 	 remaining channel: 202
+INFO:__main__:layer index: 36 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 36 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 36 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 39 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 39 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 39 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 43 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 43 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 43 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 46 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 46 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 46 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 50 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 50 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 50 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 53 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 53 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 53 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 57 	 total channel: 256 	 remaining channel: 21INFO:__main__:layer index: 57 	 total channel: 256 	 remaining channel: 21
+
+INFO:__main__:layer index: 57 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 60 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 60 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 60 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 64 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 64 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 64 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 67 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 67 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 67 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 71 	 total channel: 256 	 remaining channel: 24
+INFO:__main__:layer index: 71 	 total channel: 256 	 remaining channel: 24
+INFO:__main__:layer index: 71 	 total channel: 256 	 remaining channel: 24
+INFO:__main__:layer index: 74 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 74 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 74 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 78 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 78 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 78 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 81 	 total channel: 256 	 remaining channel: 242
+INFO:__main__:layer index: 81 	 total channel: 256 	 remaining channel: 242
+INFO:__main__:layer index: 81 	 total channel: 256 	 remaining channel: 242
+INFO:__main__:layer index: 85 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 85 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 85 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 88 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 88 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 88 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 92 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 92 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 92 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 95 	 total channel: 256 	 remaining channel: 236
+INFO:__main__:layer index: 95 	 total channel: 256 	 remaining channel: 236
+INFO:__main__:layer index: 95 	 total channel: 256 	 remaining channel: 236
+INFO:__main__:layer index: 99 	 total channel: 256 	 remaining channel: 18
+INFO:__main__:layer index: 99 	 total channel: 256 	 remaining channel: 18
+INFO:__main__:layer index: 99 	 total channel: 256 	 remaining channel: 18
+INFO:__main__:layer index: 102 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 102 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 102 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 106 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 106 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 106 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 109 	 total channel: 256 	 remaining channel: 238
+INFO:__main__:layer index: 109 	 total channel: 256 	 remaining channel: 238
+INFO:__main__:layer index: 109 	 total channel: 256 	 remaining channel: 238
+INFO:__main__:layer index: 113 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 113 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 113 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 116 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 116 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 116 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 120 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 120 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 120 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 123 	 total channel: 256 	 remaining channel: 233
+INFO:__main__:layer index: 123 	 total channel: 256 	 remaining channel: 233
+INFO:__main__:layer index: 123 	 total channel: 256 	 remaining channel: 233
+INFO:__main__:layer index: 127 	 total channel: 256 	 remaining channel: 28
+INFO:__main__:layer index: 127 	 total channel: 256 	 remaining channel: 28
+INFO:__main__:layer index: 127 	 total channel: 256 	 remaining channel: 28
+INFO:__main__:layer index: 130 	 total channel: 256 	 remaining channel: 237
+INFO:__main__:layer index: 130 	 total channel: 256 	 remaining channel: 237
+INFO:__main__:layer index: 130 	 total channel: 256 	 remaining channel: 237
+INFO:__main__:layer index: 134 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 134 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 134 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 137 	 total channel: 256 	 remaining channel: 234
+INFO:__main__:layer index: 137 	 total channel: 256 	 remaining channel: 234
+INFO:__main__:layer index: 137 	 total channel: 256 	 remaining channel: 234
+INFO:__main__:layer index: 141 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 141 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 141 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 144 	 total channel: 256 	 remaining channel: 239
+INFO:__main__:layer index: 144 	 total channel: 256 	 remaining channel: 239
+INFO:__main__:layer index: 144 	 total channel: 256 	 remaining channel: 239
+INFO:__main__:layer index: 148 	 total channel: 256 	 remaining channel: 30
+INFO:__main__:layer index: 148 	 total channel: 256 	 remaining channel: 30
+INFO:__main__:layer index: 148 	 total channel: 256 	 remaining channel: 30
+INFO:__main__:layer index: 151 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 151 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 151 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 155 	 total channel: 256 	 remaining channel: 35
+INFO:__main__:layer index: 155 	 total channel: 256 	 remaining channel: 35
+INFO:__main__:layer index: 155 	 total channel: 256 	 remaining channel: 35
+INFO:__main__:layer index: 158 	 total channel: 256 	 remaining channel: 232INFO:__main__:layer index: 158 	 total channel: 256 	 remaining channel: 232
+
+INFO:__main__:layer index: 158 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 162 	 total channel: 256 	 remaining channel: 32INFO:__main__:layer index: 162 	 total channel: 256 	 remaining channel: 32
+
+INFO:__main__:layer index: 162 	 total channel: 256 	 remaining channel: 32
+INFO:__main__:layer index: 165 	 total channel: 256 	 remaining channel: 241INFO:__main__:layer index: 165 	 total channel: 256 	 remaining channel: 241
+
+INFO:__main__:layer index: 165 	 total channel: 256 	 remaining channel: 241
+INFO:__main__:layer index: 169 	 total channel: 256 	 remaining channel: 29INFO:__main__:layer index: 169 	 total channel: 256 	 remaining channel: 29
+
+INFO:__main__:layer index: 169 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 172 	 total channel: 256 	 remaining channel: 247INFO:__main__:layer index: 172 	 total channel: 256 	 remaining channel: 247
+
+INFO:__main__:layer index: 172 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 176 	 total channel: 256 	 remaining channel: 39INFO:__main__:layer index: 176 	 total channel: 256 	 remaining channel: 39
+
+INFO:__main__:layer index: 176 	 total channel: 256 	 remaining channel: 39
+INFO:__main__:layer index: 179 	 total channel: 256 	 remaining channel: 248INFO:__main__:layer index: 179 	 total channel: 256 	 remaining channel: 248
+
+INFO:__main__:layer index: 179 	 total channel: 256 	 remaining channel: 248
+INFO:__main__:layer index: 183 	 total channel: 256 	 remaining channel: 29INFO:__main__:layer index: 183 	 total channel: 256 	 remaining channel: 29
+
+INFO:__main__:layer index: 183 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 186 	 total channel: 256 	 remaining channel: 253INFO:__main__:layer index: 186 	 total channel: 256 	 remaining channel: 253
+
+INFO:__main__:layer index: 186 	 total channel: 256 	 remaining channel: 253
+INFO:__main__:layer index: 190 	 total channel: 256 	 remaining channel: 29INFO:__main__:layer index: 190 	 total channel: 256 	 remaining channel: 29
+
+INFO:__main__:layer index: 190 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 193 	 total channel: 256 	 remaining channel: 255INFO:__main__:layer index: 193 	 total channel: 256 	 remaining channel: 255
+
+INFO:__main__:layer index: 193 	 total channel: 256 	 remaining channel: 255
+INFO:__main__:layer index: 197 	 total channel: 256 	 remaining channel: 26INFO:__main__:layer index: 197 	 total channel: 256 	 remaining channel: 26
+
+INFO:__main__:layer index: 197 	 total channel: 256 	 remaining channel: 26
+INFO:__main__:layer index: 200 	 total channel: 256 	 remaining channel: 256INFO:__main__:layer index: 200 	 total channel: 256 	 remaining channel: 256
+
+INFO:__main__:layer index: 200 	 total channel: 256 	 remaining channel: 256
+INFO:__main__:layer index: 204 	 total channel: 256 	 remaining channel: 23INFO:__main__:layer index: 204 	 total channel: 256 	 remaining channel: 23
+
+INFO:__main__:layer index: 204 	 total channel: 256 	 remaining channel: 23
+INFO:__main__:layer index: 207 	 total channel: 256 	 remaining channel: 256INFO:__main__:layer index: 207 	 total channel: 256 	 remaining channel: 256
+
+INFO:__main__:layer index: 207 	 total channel: 256 	 remaining channel: 256
+INFO:__main__:Pruned ratio: 0.5000673532485962INFO:__main__:Pruned ratio: 0.5000673532485962
+INFO:__main__:Pruned ratio: 0.5000673532485962
+
+INFO:__main__:CFG: [28, 140, 31, 112, 20, 154, 19, 202, 17, 235, 17, 243, 17, 244, 21, 247, 19, 246, 24, 244, 27, 242, 21, 243, 17, 236, 18, 232, 31, 238, 31, 235, 27, 233, 28, 237, 34, 234, 34, 239, 30, 246, 35, 232, 32, 241, 29, 247, 39, 248, 29, 253, 29, 255, 26, 256, 23, 256]
+INFO:__main__:CFG: [28, 140, 31, 112, 20, 154, 19, 202, 17, 235, 17, 243, 17, 244, 21, 247, 19, 246, 24, 244, 27, 242, 21, 243, 17, 236, 18, 232, 31, 238, 31, 235, 27, 233, 28, 237, 34, 234, 34, 239, 30, 246, 35, 232, 32, 241, 29, 247, 39, 248, 29, 253, 29, 255, 26, 256, 23, 256]INFO:__main__:CFG: [28, 140, 31, 112, 20, 154, 19, 202, 17, 235, 17, 243, 17, 244, 21, 247, 19, 246, 24, 244, 27, 242, 21, 243, 17, 236, 18, 232, 31, 238, 31, 235, 27, 233, 28, 237, 34, 234, 34, 239, 30, 246, 35, 232, 32, 241, 29, 247, 39, 248, 29, 253, 29, 255, 26, 256, 23, 256]
+
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:15:19]/weights/best_ckpt.tar.
+INFO:model.engine:[TEST] Iter 0 TestPSNR 29.4100                     BestPSNRv2 29.4100 (Iter 0)                     TestSSIM 0.9963 TestLPIPS 0.0293                     TestFLIP 0.0436 TrainHistPSNR 0.0000
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:model.engine:[VIDEO] Rendering done. Save video: "./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:15:19]/gen_images/video_ficus-pruned_Train_Render-[2024-04-23@09:15:19]_iter0.mp4"
+INFO:__main__:Calculate pruning config.
+
+INFO:__main__:layer index: 8 	 total channel: 256 	 remaining channel: 28
+INFO:__main__:layer index: 11 	 total channel: 256 	 remaining channel: 140
+INFO:__main__:layer index: 15 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 18 	 total channel: 256 	 remaining channel: 112
+INFO:__main__:layer index: 22 	 total channel: 256 	 remaining channel: 20
+INFO:__main__:layer index: 25 	 total channel: 256 	 remaining channel: 154
+INFO:__main__:layer index: 29 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 32 	 total channel: 256 	 remaining channel: 202
+INFO:__main__:layer index: 36 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 39 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 43 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 46 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 50 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 53 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 57 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 60 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 64 	 total channel: 256 	 remaining channel: 19
+INFO:__main__:layer index: 67 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 71 	 total channel: 256 	 remaining channel: 24
+INFO:__main__:layer index: 74 	 total channel: 256 	 remaining channel: 244
+INFO:__main__:layer index: 78 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 81 	 total channel: 256 	 remaining channel: 242
+INFO:__main__:layer index: 85 	 total channel: 256 	 remaining channel: 21
+INFO:__main__:layer index: 88 	 total channel: 256 	 remaining channel: 243
+INFO:__main__:layer index: 92 	 total channel: 256 	 remaining channel: 17
+INFO:__main__:layer index: 95 	 total channel: 256 	 remaining channel: 236
+INFO:__main__:layer index: 99 	 total channel: 256 	 remaining channel: 18
+INFO:__main__:layer index: 102 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 106 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 109 	 total channel: 256 	 remaining channel: 238
+INFO:__main__:layer index: 113 	 total channel: 256 	 remaining channel: 31
+INFO:__main__:layer index: 116 	 total channel: 256 	 remaining channel: 235
+INFO:__main__:layer index: 120 	 total channel: 256 	 remaining channel: 27
+INFO:__main__:layer index: 123 	 total channel: 256 	 remaining channel: 233
+INFO:__main__:layer index: 127 	 total channel: 256 	 remaining channel: 28
+INFO:__main__:layer index: 130 	 total channel: 256 	 remaining channel: 237
+INFO:__main__:layer index: 134 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 137 	 total channel: 256 	 remaining channel: 234
+INFO:__main__:layer index: 141 	 total channel: 256 	 remaining channel: 34
+INFO:__main__:layer index: 144 	 total channel: 256 	 remaining channel: 239
+INFO:__main__:layer index: 148 	 total channel: 256 	 remaining channel: 30
+INFO:__main__:layer index: 151 	 total channel: 256 	 remaining channel: 246
+INFO:__main__:layer index: 155 	 total channel: 256 	 remaining channel: 35
+INFO:__main__:layer index: 158 	 total channel: 256 	 remaining channel: 232
+INFO:__main__:layer index: 162 	 total channel: 256 	 remaining channel: 32
+INFO:__main__:layer index: 165 	 total channel: 256 	 remaining channel: 241
+INFO:__main__:layer index: 169 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 172 	 total channel: 256 	 remaining channel: 247
+INFO:__main__:layer index: 176 	 total channel: 256 	 remaining channel: 39
+INFO:__main__:layer index: 179 	 total channel: 256 	 remaining channel: 248
+INFO:__main__:layer index: 183 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 186 	 total channel: 256 	 remaining channel: 253
+INFO:__main__:layer index: 190 	 total channel: 256 	 remaining channel: 29
+INFO:__main__:layer index: 193 	 total channel: 256 	 remaining channel: 255
+INFO:__main__:layer index: 197 	 total channel: 256 	 remaining channel: 26
+INFO:__main__:layer index: 200 	 total channel: 256 	 remaining channel: 256
+INFO:__main__:layer index: 204 	 total channel: 256 	 remaining channel: 23
+INFO:__main__:layer index: 207 	 total channel: 256 	 remaining channel: 256
+INFO:__main__:Pruned ratio: 0.5000673532485962
+INFO:__main__:CFG: [28, 140, 31, 112, 20, 154, 19, 202, 17, 235, 17, 243, 17, 244, 21, 247, 19, 246, 24, 244, 27, 242, 21, 243, 17, 236, 18, 232, 31, 238, 31, 235, 27, 233, 28, 237, 34, 234, 34, 239, 30, 246, 35, 232, 32, 241, 29, 247, 39, 248, 29, 253, 29, 255, 26, 256, 23, 256]
+INFO:model.engine:Backup the code to caches.
+INFO:model.engine:[Rank 0]: Using Distributed Data Parallel.
+INFO:model.engine:[Rank 1]: Using Distributed Data Parallel.INFO:model.engine:[Rank 2]: Using Distributed Data Parallel.
+INFO:model.engine:[Rank 3]: Using Distributed Data Parallel.
+
+Setting up [LPIPS] perceptual loss: trunk [alex], v[0.1], spatial [off]
+Loading model from: /home/hice1/apeng39/.conda/envs/r2l/lib/python3.9/site-packages/lpips/weights/v0.1/alex.pth
+In shape: 28, Out shape 140.
+In shape: 140, Out shape 31.
+In shape: 31, Out shape 112.
+In shape: 112, Out shape 20.
+In shape: 20, Out shape 154.
+In shape: 154, Out shape 19.
+In shape: 19, Out shape 202.
+In shape: 202, Out shape 17.
+In shape: 17, Out shape 235.
+In shape: 235, Out shape 17.
+In shape: 17, Out shape 243.
+In shape: 243, Out shape 17.
+In shape: 17, Out shape 244.
+In shape: 244, Out shape 21.
+In shape: 21, Out shape 247.
+In shape: 247, Out shape 19.
+In shape: 19, Out shape 246.
+In shape: 246, Out shape 24.
+In shape: 24, Out shape 244.
+In shape: 244, Out shape 27.
+In shape: 27, Out shape 242.
+In shape: 242, Out shape 21.
+In shape: 21, Out shape 243.
+In shape: 243, Out shape 17.
+In shape: 17, Out shape 236.
+In shape: 236, Out shape 18.
+In shape: 18, Out shape 232.
+In shape: 232, Out shape 31.
+In shape: 31, Out shape 238.
+In shape: 238, Out shape 31.
+In shape: 31, Out shape 235.
+In shape: 235, Out shape 27.
+In shape: 27, Out shape 233.
+In shape: 233, Out shape 28.
+In shape: 28, Out shape 237.
+In shape: 237, Out shape 34.
+In shape: 34, Out shape 234.
+In shape: 234, Out shape 34.
+In shape: 34, Out shape 239.
+In shape: 239, Out shape 30.
+In shape: 30, Out shape 246.
+In shape: 246, Out shape 35.
+In shape: 35, Out shape 232.
+In shape: 232, Out shape 32.
+In shape: 32, Out shape 241.
+In shape: 241, Out shape 29.
+In shape: 29, Out shape 247.
+In shape: 247, Out shape 39.
+In shape: 39, Out shape 248.
+In shape: 248, Out shape 29.
+In shape: 29, Out shape 253.
+In shape: 253, Out shape 29.
+In shape: 29, Out shape 255.
+In shape: 255, Out shape 26.
+INFO:__main__:Successfully pruned model.In shape: 26, Out shape 256.
+
+INFO:__main__:Successfully pruned model.INFO:__main__:Successfully pruned model.
+
+In shape: 256, Out shape 23.
+In shape: 23, Out shape 256.
+INFO:__main__:Starting rendering. 
+
+INFO:__main__:Starting rendering. 
+INFO:__main__:Starting rendering. 
+
+
+In shape: 256, Out shape 256.
+INFO:__main__:Successfully pruned model.
+INFO:__main__:Starting rendering. 
+
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/best_ckpt.tar.
+INFO:model.engine:[TEST] Iter 0 TestPSNR 6.9122                     BestPSNRv2 6.9122 (Iter 0)                     TestSSIM 0.6879 TestLPIPS 0.9438                     TestFLIP 0.9034 TrainHistPSNR 0.0000
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:model.engine:[VIDEO] Rendering done. Save video: "./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/gen_images/video_ficus-pruned_Train_Render-[2024-04-23@09:16:01]_iter0.mp4"
+Loading pseudo dataset:
+Loaded 5000 pseudo data.
+{'downscaled_height': 100, 'downscaled_width': 100, 'downscaled_focal': 138.88888549804688, 'scale': 2.687419273632712, 'max_radius': 1.5000001192092896, 'ff': False, 'dataset_type': 'nerf', 'sc': None}
+EPOCH 0 | GLOBAL_STEP 1
+EPOCH 1 | GLOBAL_STEP 126
+EPOCH 2 | GLOBAL_STEP 251
+EPOCH 3 | GLOBAL_STEP 376
+EPOCH 4 | GLOBAL_STEP 501
+EPOCH 5 | GLOBAL_STEP 626
+EPOCH 6 | GLOBAL_STEP 751
+EPOCH 7 | GLOBAL_STEP 876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 8 | GLOBAL_STEP 1001
+EPOCH 9 | GLOBAL_STEP 1126
+EPOCH 10 | GLOBAL_STEP 1251
+EPOCH 11 | GLOBAL_STEP 1376
+EPOCH 12 | GLOBAL_STEP 1501
+EPOCH 13 | GLOBAL_STEP 1626
+EPOCH 14 | GLOBAL_STEP 1751
+EPOCH 15 | GLOBAL_STEP 1876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 16 | GLOBAL_STEP 2001
+EPOCH 17 | GLOBAL_STEP 2126
+EPOCH 18 | GLOBAL_STEP 2251
+EPOCH 19 | GLOBAL_STEP 2376
+EPOCH 20 | GLOBAL_STEP 2501
+EPOCH 21 | GLOBAL_STEP 2626
+EPOCH 22 | GLOBAL_STEP 2751
+EPOCH 23 | GLOBAL_STEP 2876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 24 | GLOBAL_STEP 3001
+EPOCH 25 | GLOBAL_STEP 3126
+EPOCH 26 | GLOBAL_STEP 3251
+EPOCH 27 | GLOBAL_STEP 3376
+EPOCH 28 | GLOBAL_STEP 3501
+EPOCH 29 | GLOBAL_STEP 3626
+EPOCH 30 | GLOBAL_STEP 3751
+EPOCH 31 | GLOBAL_STEP 3876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 32 | GLOBAL_STEP 4001
+EPOCH 33 | GLOBAL_STEP 4126
+EPOCH 34 | GLOBAL_STEP 4251
+EPOCH 35 | GLOBAL_STEP 4376
+EPOCH 36 | GLOBAL_STEP 4501
+EPOCH 37 | GLOBAL_STEP 4626
+EPOCH 38 | GLOBAL_STEP 4751
+EPOCH 39 | GLOBAL_STEP 4876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 40 | GLOBAL_STEP 5001
+EPOCH 41 | GLOBAL_STEP 5126
+EPOCH 42 | GLOBAL_STEP 5251
+EPOCH 43 | GLOBAL_STEP 5376
+EPOCH 44 | GLOBAL_STEP 5501
+EPOCH 45 | GLOBAL_STEP 5626
+EPOCH 46 | GLOBAL_STEP 5751
+EPOCH 47 | GLOBAL_STEP 5876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 48 | GLOBAL_STEP 6001
+EPOCH 49 | GLOBAL_STEP 6126
+EPOCH 50 | GLOBAL_STEP 6251
+EPOCH 51 | GLOBAL_STEP 6376
+EPOCH 52 | GLOBAL_STEP 6501
+EPOCH 53 | GLOBAL_STEP 6626
+EPOCH 54 | GLOBAL_STEP 6751
+EPOCH 55 | GLOBAL_STEP 6876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 56 | GLOBAL_STEP 7001
+EPOCH 57 | GLOBAL_STEP 7126
+EPOCH 58 | GLOBAL_STEP 7251
+EPOCH 59 | GLOBAL_STEP 7376
+EPOCH 60 | GLOBAL_STEP 7501
+EPOCH 61 | GLOBAL_STEP 7626
+EPOCH 62 | GLOBAL_STEP 7751
+EPOCH 63 | GLOBAL_STEP 7876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 64 | GLOBAL_STEP 8001
+EPOCH 65 | GLOBAL_STEP 8126
+EPOCH 66 | GLOBAL_STEP 8251
+EPOCH 67 | GLOBAL_STEP 8376
+EPOCH 68 | GLOBAL_STEP 8501
+EPOCH 69 | GLOBAL_STEP 8626
+EPOCH 70 | GLOBAL_STEP 8751
+EPOCH 71 | GLOBAL_STEP 8876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 72 | GLOBAL_STEP 9001
+EPOCH 73 | GLOBAL_STEP 9126
+EPOCH 74 | GLOBAL_STEP 9251
+EPOCH 75 | GLOBAL_STEP 9376
+EPOCH 76 | GLOBAL_STEP 9501
+EPOCH 77 | GLOBAL_STEP 9626
+EPOCH 78 | GLOBAL_STEP 9751
+EPOCH 79 | GLOBAL_STEP 9876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 80 | GLOBAL_STEP 10001
+EPOCH 81 | GLOBAL_STEP 10126
+EPOCH 82 | GLOBAL_STEP 10251
+EPOCH 83 | GLOBAL_STEP 10376
+EPOCH 84 | GLOBAL_STEP 10501
+EPOCH 85 | GLOBAL_STEP 10626
+EPOCH 86 | GLOBAL_STEP 10751
+EPOCH 87 | GLOBAL_STEP 10876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 88 | GLOBAL_STEP 11001
+EPOCH 89 | GLOBAL_STEP 11126
+EPOCH 90 | GLOBAL_STEP 11251
+EPOCH 91 | GLOBAL_STEP 11376
+EPOCH 92 | GLOBAL_STEP 11501
+EPOCH 93 | GLOBAL_STEP 11626
+EPOCH 94 | GLOBAL_STEP 11751
+EPOCH 95 | GLOBAL_STEP 11876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 96 | GLOBAL_STEP 12001
+EPOCH 97 | GLOBAL_STEP 12126
+EPOCH 98 | GLOBAL_STEP 12251
+EPOCH 99 | GLOBAL_STEP 12376
+EPOCH 100 | GLOBAL_STEP 12501
+EPOCH 101 | GLOBAL_STEP 12626
+EPOCH 102 | GLOBAL_STEP 12751
+EPOCH 103 | GLOBAL_STEP 12876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 104 | GLOBAL_STEP 13001
+EPOCH 105 | GLOBAL_STEP 13126
+EPOCH 106 | GLOBAL_STEP 13251
+EPOCH 107 | GLOBAL_STEP 13376
+EPOCH 108 | GLOBAL_STEP 13501
+EPOCH 109 | GLOBAL_STEP 13626
+EPOCH 110 | GLOBAL_STEP 13751
+EPOCH 111 | GLOBAL_STEP 13876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 112 | GLOBAL_STEP 14001
+EPOCH 113 | GLOBAL_STEP 14126
+EPOCH 114 | GLOBAL_STEP 14251
+EPOCH 115 | GLOBAL_STEP 14376
+EPOCH 116 | GLOBAL_STEP 14501
+EPOCH 117 | GLOBAL_STEP 14626
+EPOCH 118 | GLOBAL_STEP 14751
+EPOCH 119 | GLOBAL_STEP 14876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 120 | GLOBAL_STEP 15001
+EPOCH 121 | GLOBAL_STEP 15126
+EPOCH 122 | GLOBAL_STEP 15251
+EPOCH 123 | GLOBAL_STEP 15376
+EPOCH 124 | GLOBAL_STEP 15501
+EPOCH 125 | GLOBAL_STEP 15626
+EPOCH 126 | GLOBAL_STEP 15751
+EPOCH 127 | GLOBAL_STEP 15876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 128 | GLOBAL_STEP 16001
+EPOCH 129 | GLOBAL_STEP 16126
+EPOCH 130 | GLOBAL_STEP 16251
+EPOCH 131 | GLOBAL_STEP 16376
+EPOCH 132 | GLOBAL_STEP 16501
+EPOCH 133 | GLOBAL_STEP 16626
+EPOCH 134 | GLOBAL_STEP 16751
+EPOCH 135 | GLOBAL_STEP 16876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 136 | GLOBAL_STEP 17001
+EPOCH 137 | GLOBAL_STEP 17126
+EPOCH 138 | GLOBAL_STEP 17251
+EPOCH 139 | GLOBAL_STEP 17376
+EPOCH 140 | GLOBAL_STEP 17501
+EPOCH 141 | GLOBAL_STEP 17626
+EPOCH 142 | GLOBAL_STEP 17751
+EPOCH 143 | GLOBAL_STEP 17876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 144 | GLOBAL_STEP 18001
+EPOCH 145 | GLOBAL_STEP 18126
+EPOCH 146 | GLOBAL_STEP 18251
+EPOCH 147 | GLOBAL_STEP 18376
+EPOCH 148 | GLOBAL_STEP 18501
+EPOCH 149 | GLOBAL_STEP 18626
+EPOCH 150 | GLOBAL_STEP 18751
+EPOCH 151 | GLOBAL_STEP 18876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 152 | GLOBAL_STEP 19001
+EPOCH 153 | GLOBAL_STEP 19126
+EPOCH 154 | GLOBAL_STEP 19251
+EPOCH 155 | GLOBAL_STEP 19376
+EPOCH 156 | GLOBAL_STEP 19501
+EPOCH 157 | GLOBAL_STEP 19626
+EPOCH 158 | GLOBAL_STEP 19751
+EPOCH 159 | GLOBAL_STEP 19876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 160 | GLOBAL_STEP 20001
+EPOCH 161 | GLOBAL_STEP 20126
+EPOCH 162 | GLOBAL_STEP 20251
+EPOCH 163 | GLOBAL_STEP 20376
+EPOCH 164 | GLOBAL_STEP 20501
+EPOCH 165 | GLOBAL_STEP 20626
+EPOCH 166 | GLOBAL_STEP 20751
+EPOCH 167 | GLOBAL_STEP 20876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 168 | GLOBAL_STEP 21001
+EPOCH 169 | GLOBAL_STEP 21126
+EPOCH 170 | GLOBAL_STEP 21251
+EPOCH 171 | GLOBAL_STEP 21376
+EPOCH 172 | GLOBAL_STEP 21501
+EPOCH 173 | GLOBAL_STEP 21626
+EPOCH 174 | GLOBAL_STEP 21751
+EPOCH 175 | GLOBAL_STEP 21876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 176 | GLOBAL_STEP 22001
+EPOCH 177 | GLOBAL_STEP 22126
+EPOCH 178 | GLOBAL_STEP 22251
+EPOCH 179 | GLOBAL_STEP 22376
+EPOCH 180 | GLOBAL_STEP 22501
+EPOCH 181 | GLOBAL_STEP 22626
+EPOCH 182 | GLOBAL_STEP 22751
+EPOCH 183 | GLOBAL_STEP 22876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 184 | GLOBAL_STEP 23001
+EPOCH 185 | GLOBAL_STEP 23126
+EPOCH 186 | GLOBAL_STEP 23251
+EPOCH 187 | GLOBAL_STEP 23376
+EPOCH 188 | GLOBAL_STEP 23501
+EPOCH 189 | GLOBAL_STEP 23626
+EPOCH 190 | GLOBAL_STEP 23751
+EPOCH 191 | GLOBAL_STEP 23876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 192 | GLOBAL_STEP 24001
+EPOCH 193 | GLOBAL_STEP 24126
+EPOCH 194 | GLOBAL_STEP 24251
+EPOCH 195 | GLOBAL_STEP 24376
+EPOCH 196 | GLOBAL_STEP 24501
+EPOCH 197 | GLOBAL_STEP 24626
+EPOCH 198 | GLOBAL_STEP 24751
+EPOCH 199 | GLOBAL_STEP 24876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 200 | GLOBAL_STEP 25001
+EPOCH 201 | GLOBAL_STEP 25126
+EPOCH 202 | GLOBAL_STEP 25251
+EPOCH 203 | GLOBAL_STEP 25376
+EPOCH 204 | GLOBAL_STEP 25501
+EPOCH 205 | GLOBAL_STEP 25626
+EPOCH 206 | GLOBAL_STEP 25751
+EPOCH 207 | GLOBAL_STEP 25876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 208 | GLOBAL_STEP 26001
+EPOCH 209 | GLOBAL_STEP 26126
+EPOCH 210 | GLOBAL_STEP 26251
+EPOCH 211 | GLOBAL_STEP 26376
+EPOCH 212 | GLOBAL_STEP 26501
+EPOCH 213 | GLOBAL_STEP 26626
+EPOCH 214 | GLOBAL_STEP 26751
+EPOCH 215 | GLOBAL_STEP 26876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 216 | GLOBAL_STEP 27001
+EPOCH 217 | GLOBAL_STEP 27126
+EPOCH 218 | GLOBAL_STEP 27251
+EPOCH 219 | GLOBAL_STEP 27376
+EPOCH 220 | GLOBAL_STEP 27501
+EPOCH 221 | GLOBAL_STEP 27626
+EPOCH 222 | GLOBAL_STEP 27751
+EPOCH 223 | GLOBAL_STEP 27876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 224 | GLOBAL_STEP 28001
+EPOCH 225 | GLOBAL_STEP 28126
+EPOCH 226 | GLOBAL_STEP 28251
+EPOCH 227 | GLOBAL_STEP 28376
+EPOCH 228 | GLOBAL_STEP 28501
+EPOCH 229 | GLOBAL_STEP 28626
+EPOCH 230 | GLOBAL_STEP 28751
+EPOCH 231 | GLOBAL_STEP 28876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 232 | GLOBAL_STEP 29001
+EPOCH 233 | GLOBAL_STEP 29126
+EPOCH 234 | GLOBAL_STEP 29251
+EPOCH 235 | GLOBAL_STEP 29376
+EPOCH 236 | GLOBAL_STEP 29501
+EPOCH 237 | GLOBAL_STEP 29626
+EPOCH 238 | GLOBAL_STEP 29751
+EPOCH 239 | GLOBAL_STEP 29876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 240 | GLOBAL_STEP 30001
+EPOCH 241 | GLOBAL_STEP 30126
+EPOCH 242 | GLOBAL_STEP 30251
+EPOCH 243 | GLOBAL_STEP 30376
+EPOCH 244 | GLOBAL_STEP 30501
+EPOCH 245 | GLOBAL_STEP 30626
+EPOCH 246 | GLOBAL_STEP 30751
+EPOCH 247 | GLOBAL_STEP 30876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 248 | GLOBAL_STEP 31001
+EPOCH 249 | GLOBAL_STEP 31126
+EPOCH 250 | GLOBAL_STEP 31251
+EPOCH 251 | GLOBAL_STEP 31376
+EPOCH 252 | GLOBAL_STEP 31501
+EPOCH 253 | GLOBAL_STEP 31626
+EPOCH 254 | GLOBAL_STEP 31751
+EPOCH 255 | GLOBAL_STEP 31876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 256 | GLOBAL_STEP 32001
+EPOCH 257 | GLOBAL_STEP 32126
+EPOCH 258 | GLOBAL_STEP 32251
+EPOCH 259 | GLOBAL_STEP 32376
+EPOCH 260 | GLOBAL_STEP 32501
+EPOCH 261 | GLOBAL_STEP 32626
+EPOCH 262 | GLOBAL_STEP 32751
+EPOCH 263 | GLOBAL_STEP 32876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 264 | GLOBAL_STEP 33001
+EPOCH 265 | GLOBAL_STEP 33126
+EPOCH 266 | GLOBAL_STEP 33251
+EPOCH 267 | GLOBAL_STEP 33376
+EPOCH 268 | GLOBAL_STEP 33501
+EPOCH 269 | GLOBAL_STEP 33626
+EPOCH 270 | GLOBAL_STEP 33751
+EPOCH 271 | GLOBAL_STEP 33876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 272 | GLOBAL_STEP 34001
+EPOCH 273 | GLOBAL_STEP 34126
+EPOCH 274 | GLOBAL_STEP 34251
+EPOCH 275 | GLOBAL_STEP 34376
+EPOCH 276 | GLOBAL_STEP 34501
+EPOCH 277 | GLOBAL_STEP 34626
+EPOCH 278 | GLOBAL_STEP 34751
+EPOCH 279 | GLOBAL_STEP 34876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 280 | GLOBAL_STEP 35001
+EPOCH 281 | GLOBAL_STEP 35126
+EPOCH 282 | GLOBAL_STEP 35251
+EPOCH 283 | GLOBAL_STEP 35376
+EPOCH 284 | GLOBAL_STEP 35501
+EPOCH 285 | GLOBAL_STEP 35626
+EPOCH 286 | GLOBAL_STEP 35751
+EPOCH 287 | GLOBAL_STEP 35876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 288 | GLOBAL_STEP 36001
+EPOCH 289 | GLOBAL_STEP 36126
+EPOCH 290 | GLOBAL_STEP 36251
+EPOCH 291 | GLOBAL_STEP 36376
+EPOCH 292 | GLOBAL_STEP 36501
+EPOCH 293 | GLOBAL_STEP 36626
+EPOCH 294 | GLOBAL_STEP 36751
+EPOCH 295 | GLOBAL_STEP 36876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 296 | GLOBAL_STEP 37001
+EPOCH 297 | GLOBAL_STEP 37126
+EPOCH 298 | GLOBAL_STEP 37251
+EPOCH 299 | GLOBAL_STEP 37376
+EPOCH 300 | GLOBAL_STEP 37501
+EPOCH 301 | GLOBAL_STEP 37626
+EPOCH 302 | GLOBAL_STEP 37751
+EPOCH 303 | GLOBAL_STEP 37876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 304 | GLOBAL_STEP 38001
+EPOCH 305 | GLOBAL_STEP 38126
+EPOCH 306 | GLOBAL_STEP 38251
+EPOCH 307 | GLOBAL_STEP 38376
+EPOCH 308 | GLOBAL_STEP 38501
+EPOCH 309 | GLOBAL_STEP 38626
+EPOCH 310 | GLOBAL_STEP 38751
+EPOCH 311 | GLOBAL_STEP 38876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 312 | GLOBAL_STEP 39001
+EPOCH 313 | GLOBAL_STEP 39126
+EPOCH 314 | GLOBAL_STEP 39251
+EPOCH 315 | GLOBAL_STEP 39376
+EPOCH 316 | GLOBAL_STEP 39501
+EPOCH 317 | GLOBAL_STEP 39626
+EPOCH 318 | GLOBAL_STEP 39751
+EPOCH 319 | GLOBAL_STEP 39876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 320 | GLOBAL_STEP 40001
+EPOCH 321 | GLOBAL_STEP 40126
+EPOCH 322 | GLOBAL_STEP 40251
+EPOCH 323 | GLOBAL_STEP 40376
+EPOCH 324 | GLOBAL_STEP 40501
+EPOCH 325 | GLOBAL_STEP 40626
+EPOCH 326 | GLOBAL_STEP 40751
+EPOCH 327 | GLOBAL_STEP 40876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 328 | GLOBAL_STEP 41001
+EPOCH 329 | GLOBAL_STEP 41126
+EPOCH 330 | GLOBAL_STEP 41251
+EPOCH 331 | GLOBAL_STEP 41376
+EPOCH 332 | GLOBAL_STEP 41501
+EPOCH 333 | GLOBAL_STEP 41626
+EPOCH 334 | GLOBAL_STEP 41751
+EPOCH 335 | GLOBAL_STEP 41876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 336 | GLOBAL_STEP 42001
+EPOCH 337 | GLOBAL_STEP 42126
+EPOCH 338 | GLOBAL_STEP 42251
+EPOCH 339 | GLOBAL_STEP 42376
+EPOCH 340 | GLOBAL_STEP 42501
+EPOCH 341 | GLOBAL_STEP 42626
+EPOCH 342 | GLOBAL_STEP 42751
+EPOCH 343 | GLOBAL_STEP 42876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 344 | GLOBAL_STEP 43001
+EPOCH 345 | GLOBAL_STEP 43126
+EPOCH 346 | GLOBAL_STEP 43251
+EPOCH 347 | GLOBAL_STEP 43376
+EPOCH 348 | GLOBAL_STEP 43501
+EPOCH 349 | GLOBAL_STEP 43626
+EPOCH 350 | GLOBAL_STEP 43751
+EPOCH 351 | GLOBAL_STEP 43876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 352 | GLOBAL_STEP 44001
+EPOCH 353 | GLOBAL_STEP 44126
+EPOCH 354 | GLOBAL_STEP 44251
+EPOCH 355 | GLOBAL_STEP 44376
+EPOCH 356 | GLOBAL_STEP 44501
+EPOCH 357 | GLOBAL_STEP 44626
+EPOCH 358 | GLOBAL_STEP 44751
+EPOCH 359 | GLOBAL_STEP 44876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 360 | GLOBAL_STEP 45001
+EPOCH 361 | GLOBAL_STEP 45126
+EPOCH 362 | GLOBAL_STEP 45251
+EPOCH 363 | GLOBAL_STEP 45376
+EPOCH 364 | GLOBAL_STEP 45501
+EPOCH 365 | GLOBAL_STEP 45626
+EPOCH 366 | GLOBAL_STEP 45751
+EPOCH 367 | GLOBAL_STEP 45876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 368 | GLOBAL_STEP 46001
+EPOCH 369 | GLOBAL_STEP 46126
+EPOCH 370 | GLOBAL_STEP 46251
+EPOCH 371 | GLOBAL_STEP 46376
+EPOCH 372 | GLOBAL_STEP 46501
+EPOCH 373 | GLOBAL_STEP 46626
+EPOCH 374 | GLOBAL_STEP 46751
+EPOCH 375 | GLOBAL_STEP 46876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 376 | GLOBAL_STEP 47001
+EPOCH 377 | GLOBAL_STEP 47126
+EPOCH 378 | GLOBAL_STEP 47251
+EPOCH 379 | GLOBAL_STEP 47376
+EPOCH 380 | GLOBAL_STEP 47501
+EPOCH 381 | GLOBAL_STEP 47626
+EPOCH 382 | GLOBAL_STEP 47751
+EPOCH 383 | GLOBAL_STEP 47876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 384 | GLOBAL_STEP 48001
+EPOCH 385 | GLOBAL_STEP 48126
+EPOCH 386 | GLOBAL_STEP 48251
+EPOCH 387 | GLOBAL_STEP 48376
+EPOCH 388 | GLOBAL_STEP 48501
+EPOCH 389 | GLOBAL_STEP 48626
+EPOCH 390 | GLOBAL_STEP 48751
+EPOCH 391 | GLOBAL_STEP 48876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 392 | GLOBAL_STEP 49001
+EPOCH 393 | GLOBAL_STEP 49126
+EPOCH 394 | GLOBAL_STEP 49251
+EPOCH 395 | GLOBAL_STEP 49376
+EPOCH 396 | GLOBAL_STEP 49501
+EPOCH 397 | GLOBAL_STEP 49626
+EPOCH 398 | GLOBAL_STEP 49751
+EPOCH 399 | GLOBAL_STEP 49876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 400 | GLOBAL_STEP 50001
+EPOCH 401 | GLOBAL_STEP 50126
+EPOCH 402 | GLOBAL_STEP 50251
+EPOCH 403 | GLOBAL_STEP 50376
+EPOCH 404 | GLOBAL_STEP 50501
+EPOCH 405 | GLOBAL_STEP 50626
+EPOCH 406 | GLOBAL_STEP 50751
+EPOCH 407 | GLOBAL_STEP 50876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 408 | GLOBAL_STEP 51001
+EPOCH 409 | GLOBAL_STEP 51126
+EPOCH 410 | GLOBAL_STEP 51251
+EPOCH 411 | GLOBAL_STEP 51376
+EPOCH 412 | GLOBAL_STEP 51501
+EPOCH 413 | GLOBAL_STEP 51626
+EPOCH 414 | GLOBAL_STEP 51751
+EPOCH 415 | GLOBAL_STEP 51876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 416 | GLOBAL_STEP 52001
+EPOCH 417 | GLOBAL_STEP 52126
+EPOCH 418 | GLOBAL_STEP 52251
+EPOCH 419 | GLOBAL_STEP 52376
+EPOCH 420 | GLOBAL_STEP 52501
+EPOCH 421 | GLOBAL_STEP 52626
+EPOCH 422 | GLOBAL_STEP 52751
+EPOCH 423 | GLOBAL_STEP 52876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 424 | GLOBAL_STEP 53001
+EPOCH 425 | GLOBAL_STEP 53126
+EPOCH 426 | GLOBAL_STEP 53251
+EPOCH 427 | GLOBAL_STEP 53376
+EPOCH 428 | GLOBAL_STEP 53501
+EPOCH 429 | GLOBAL_STEP 53626
+EPOCH 430 | GLOBAL_STEP 53751
+EPOCH 431 | GLOBAL_STEP 53876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 432 | GLOBAL_STEP 54001
+EPOCH 433 | GLOBAL_STEP 54126
+EPOCH 434 | GLOBAL_STEP 54251
+EPOCH 435 | GLOBAL_STEP 54376
+EPOCH 436 | GLOBAL_STEP 54501
+EPOCH 437 | GLOBAL_STEP 54626
+EPOCH 438 | GLOBAL_STEP 54751
+EPOCH 439 | GLOBAL_STEP 54876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 440 | GLOBAL_STEP 55001
+EPOCH 441 | GLOBAL_STEP 55126
+EPOCH 442 | GLOBAL_STEP 55251
+EPOCH 443 | GLOBAL_STEP 55376
+EPOCH 444 | GLOBAL_STEP 55501
+EPOCH 445 | GLOBAL_STEP 55626
+EPOCH 446 | GLOBAL_STEP 55751
+EPOCH 447 | GLOBAL_STEP 55876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 448 | GLOBAL_STEP 56001
+EPOCH 449 | GLOBAL_STEP 56126
+EPOCH 450 | GLOBAL_STEP 56251
+EPOCH 451 | GLOBAL_STEP 56376
+EPOCH 452 | GLOBAL_STEP 56501
+EPOCH 453 | GLOBAL_STEP 56626
+EPOCH 454 | GLOBAL_STEP 56751
+EPOCH 455 | GLOBAL_STEP 56876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 456 | GLOBAL_STEP 57001
+EPOCH 457 | GLOBAL_STEP 57126
+EPOCH 458 | GLOBAL_STEP 57251
+EPOCH 459 | GLOBAL_STEP 57376
+EPOCH 460 | GLOBAL_STEP 57501
+EPOCH 461 | GLOBAL_STEP 57626
+EPOCH 462 | GLOBAL_STEP 57751
+EPOCH 463 | GLOBAL_STEP 57876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 464 | GLOBAL_STEP 58001
+EPOCH 465 | GLOBAL_STEP 58126
+EPOCH 466 | GLOBAL_STEP 58251
+EPOCH 467 | GLOBAL_STEP 58376
+EPOCH 468 | GLOBAL_STEP 58501
+EPOCH 469 | GLOBAL_STEP 58626
+EPOCH 470 | GLOBAL_STEP 58751
+EPOCH 471 | GLOBAL_STEP 58876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 472 | GLOBAL_STEP 59001
+EPOCH 473 | GLOBAL_STEP 59126
+EPOCH 474 | GLOBAL_STEP 59251
+EPOCH 475 | GLOBAL_STEP 59376
+EPOCH 476 | GLOBAL_STEP 59501
+EPOCH 477 | GLOBAL_STEP 59626
+EPOCH 478 | GLOBAL_STEP 59751
+EPOCH 479 | GLOBAL_STEP 59876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:model.engine:[VIDEO] Rendering done. Save video: "./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/gen_images/video_ficus-pruned_Train_Render-[2024-04-23@09:16:01]_iter60000.mp4"
+INFO:model.engine:Rank [0]: Start rendering.
+
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/best_ckpt.tar.
+INFO:model.engine:[TEST] Iter 60000 TestPSNR 26.3443                     BestPSNRv2 26.3443 (Iter 60000)                     TestSSIM 0.9933 TestLPIPS 0.0627                     TestFLIP 0.0611 TrainHistPSNR 27.3947
+EPOCH 480 | GLOBAL_STEP 60001
+EPOCH 481 | GLOBAL_STEP 60126
+EPOCH 482 | GLOBAL_STEP 60251
+EPOCH 483 | GLOBAL_STEP 60376
+EPOCH 484 | GLOBAL_STEP 60501
+EPOCH 485 | GLOBAL_STEP 60626
+EPOCH 486 | GLOBAL_STEP 60751
+EPOCH 487 | GLOBAL_STEP 60876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 488 | GLOBAL_STEP 61001
+EPOCH 489 | GLOBAL_STEP 61126
+EPOCH 490 | GLOBAL_STEP 61251
+EPOCH 491 | GLOBAL_STEP 61376
+EPOCH 492 | GLOBAL_STEP 61501
+EPOCH 493 | GLOBAL_STEP 61626
+EPOCH 494 | GLOBAL_STEP 61751
+EPOCH 495 | GLOBAL_STEP 61876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 496 | GLOBAL_STEP 62001
+EPOCH 497 | GLOBAL_STEP 62126
+EPOCH 498 | GLOBAL_STEP 62251
+EPOCH 499 | GLOBAL_STEP 62376
+EPOCH 500 | GLOBAL_STEP 62501
+EPOCH 501 | GLOBAL_STEP 62626
+EPOCH 502 | GLOBAL_STEP 62751
+EPOCH 503 | GLOBAL_STEP 62876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 504 | GLOBAL_STEP 63001
+EPOCH 505 | GLOBAL_STEP 63126
+EPOCH 506 | GLOBAL_STEP 63251
+EPOCH 507 | GLOBAL_STEP 63376
+EPOCH 508 | GLOBAL_STEP 63501
+EPOCH 509 | GLOBAL_STEP 63626
+EPOCH 510 | GLOBAL_STEP 63751
+EPOCH 511 | GLOBAL_STEP 63876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 512 | GLOBAL_STEP 64001
+EPOCH 513 | GLOBAL_STEP 64126
+EPOCH 514 | GLOBAL_STEP 64251
+EPOCH 515 | GLOBAL_STEP 64376
+EPOCH 516 | GLOBAL_STEP 64501
+EPOCH 517 | GLOBAL_STEP 64626
+EPOCH 518 | GLOBAL_STEP 64751
+EPOCH 519 | GLOBAL_STEP 64876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 520 | GLOBAL_STEP 65001
+EPOCH 521 | GLOBAL_STEP 65126
+EPOCH 522 | GLOBAL_STEP 65251
+EPOCH 523 | GLOBAL_STEP 65376
+EPOCH 524 | GLOBAL_STEP 65501
+EPOCH 525 | GLOBAL_STEP 65626
+EPOCH 526 | GLOBAL_STEP 65751
+EPOCH 527 | GLOBAL_STEP 65876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 528 | GLOBAL_STEP 66001
+EPOCH 529 | GLOBAL_STEP 66126
+EPOCH 530 | GLOBAL_STEP 66251
+EPOCH 531 | GLOBAL_STEP 66376
+EPOCH 532 | GLOBAL_STEP 66501
+EPOCH 533 | GLOBAL_STEP 66626
+EPOCH 534 | GLOBAL_STEP 66751
+EPOCH 535 | GLOBAL_STEP 66876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 536 | GLOBAL_STEP 67001
+EPOCH 537 | GLOBAL_STEP 67126
+EPOCH 538 | GLOBAL_STEP 67251
+EPOCH 539 | GLOBAL_STEP 67376
+EPOCH 540 | GLOBAL_STEP 67501
+EPOCH 541 | GLOBAL_STEP 67626
+EPOCH 542 | GLOBAL_STEP 67751
+EPOCH 543 | GLOBAL_STEP 67876
+INFO:model.engine:[Rank 0]: Save checkpoint to ./logs/Experiments/ficus-pruned_Train_Render-[2024-04-23@09:16:01]/weights/ckpt.tar.
+EPOCH 544 | GLOBAL_STEP 68001
+---------------------------------------
+Begin Slurm Epilog: Apr-23-2024 16:13:38
+Job ID:        607930
+Array Job ID:  _4294967294
+User ID:       apeng39
+Account:       coc
+Job name:      prune_nerf.sh
+Resources:     cpu=12,gres/gpu:h100=4,mem=64G,node=1
+Rsrc Used:     cput=2-00:03:00,vmem=0,walltime=04:00:15,mem=66168332K,energy_used=0
+Partition:     ice-gpu
+Nodes:         atl1-1-03-013-8-0
+---------------------------------------
