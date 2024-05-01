@@ -1,6 +1,6 @@
 # ENeLF
 
-- View 3D renderings on the ![GitHub page](https://atpaustinpeng.github.io/ENeLF/)!
+- View 3D renderings on the [GitHub page](https://atpaustinpeng.github.io/ENeLF/)!
 
 ## Getting The Source Code
 ```
