@@ -1,0 +1,17 @@
+{
+  "best_psnr": 30.65534019470215,
+  "best_psnr_step": 220000,
+  "train_psnr": 32.02601623535156
+}{
+  "best_psnr": 30.77345848083496,
+  "best_psnr_step": 240000,
+  "train_psnr": 32.35629653930664
+}{
+  "best_psnr": 30.887577056884766,
+  "best_psnr_step": 250000,
+  "train_psnr": 32.40436935424805
+}{
+  "best_psnr": 31.140228271484375,
+  "best_psnr_step": 270000,
+  "train_psnr": 32.30976104736328
+}

@@ -1,0 +1,9 @@
+{
+  "best_psnr": 6.49884557723999,
+  "best_psnr_step": 0,
+  "train_psnr": 0
+}{
+  "best_psnr": 28.06839370727539,
+  "best_psnr_step": 60000,
+  "train_psnr": 29.903430938720703
+}
