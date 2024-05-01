@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+		<title>Real-Time Neural Light Field on Mobile Devices</title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="stylesheet" href="./resources/bootstrap.min.css" />
+		<link rel="stylesheet" href="./resources/font-awesome.min.css" />
+		<link rel="stylesheet" href="./resources/codemirror.min.css" />
+		<link rel="stylesheet" href="./resources/app.css" />
+		<link rel="stylesheet" href="./resources/bootstrap.min(1).css" />
+
+		<script src="./resources/jquery.min.js"></script>
+		<script src="./resources/bootstrap.min.js"></script>
+		<script src="./resources/codemirror.min.js"></script>
+		<script src="./resources/clipboard.min.js"></script>
+
+		<script src="./resources/app.js"></script>
+	</head>
+
+	<body>
+		<div class="container" id="main">
+			<div class="row">
+				<h2 class="col-md-12 text-center">
+					Efficient Neural Light Field (ENeLF) for Mobile Devices<br />
+				</h2>
+				<h3 class="col-md-12 text-center">CVPR 2023<br /></h3>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<ul class="list-inline">
+						<li>
+							<a
+								href="https://www.linkedin.com/in/atpaustinpeng/"
+							>
+								Austin Peng
+							</a>
+							<br />Georgia Institute of Technology
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 text-center">
+					<ul class="nav nav-pills nav-justified">
+						<li>
+							<a
+								href="https://github.com/ATPAustinPeng/ENeLF/blob/master/FINAL_REPORT_ISCA_EVGA_Submission.pdf"
+							>
+								<img
+									src="resources/paper_mini.png"
+									height="60px"
+								/>
+								<h4><strong>Paper</strong></h4>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/ATPAustinPeng/ENeLF">
+								<img
+									src="resources/github_logo.png"
+									height="60px"
+								/>
+								<h4><strong>Code</strong></h4>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h3>Abstract</h3>
+					<p class="text-justify">
+						Novel view synthesis (NVS) is a challenge in computer
+						vision and graphics, focusing on generating realistic
+						images of a scene from unobserved camera poses, given a
+						limited set of authentic input images. Neural radiance
+						fields (NeRF) achieved impressive results in rendering
+						quality by utilizing volumetric rendering. However, NeRF
+						and its variants are unsuitable for mobile devices due
+						to the high computational cost of volumetric rendering.
+						Emerging research in neural light fields (NeLF)
+						eliminates the need for volumetric rendering by directly
+						learning a mapping from ray representation to pixel
+						color. NeLF has demonstrated its capability to achieve
+						results similar to NeRF but requires a more extensive,
+						computationally intensive network that is not
+						mobile-friendly. Unlike existing works, this research
+						builds upon the novel network architecture introduced by
+						MobileR2L and aggressively applies a compression
+						technique (channel-wise structure pruning) to produce a
+						model that runs efficiently on mobile devices with lower
+						latency and smaller sizes, with a slight decrease in
+						performance.
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h3>
+						Results on Realistic Synthetic 360<sup>o</sup> Dataset.
+					</h3>
+				</div>
+
+				<div class="col-md-8 col-md-offset-2">
+					<h4><i>Left Two:</i> Chair; <i>Right Two:</i> Drum.</h4>
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<div class="col-md-6">
+						<video
+							id="v1"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/chair_record_mp4.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v2"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/chair.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+					<div class="col-md-6">
+						<video
+							id="v3"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/drum_record_mp4.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v4"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/drum.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+				</div>
+				<br />
+				<br /><br />
+
+				<div class="col-md-8 col-md-offset-2">
+					<h4><i>Left Two:</i> Ficus; <i>Right Two:</i> Lego.</h4>
+				</div>
+				<div class="col-md-8 col-md-offset-2">
+					<div class="col-md-6">
+						<video
+							id="v1"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/ficus_record_mp4.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v2"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/ficus.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+					<div class="col-md-6">
+						<video
+							id="v3"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/hotdog_record_mp4.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v4"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/hotdog.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+				</div>
+				<br />
+				<br /><br />
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h3>Citation</h3>
+					<div class="form-group col-md-10 col-md-offset-1">
+						<textarea
+							id="bibtex"
+							class="form-control"
+							readonly=""
+							style="display: none"
+						>
+@article{cao2022real,
+  title={Real-Time Neural Light Field on Mobile Devices},
+  author={Cao, Junli and Wang, Huan and Chemerys, Pavlo and Shakhrai, Vladislav and Hu, Ju and Fu, Yun and Makoviichuk, Denys and Tulyakov, Sergey and Ren, Jian},
+  journal={arXiv preprint arXiv:2212.08057},
+  year={2022}
+}</textarea
+						>
+						<div class="CodeMirror cm-s-default CodeMirror-wrap">
+							<div
+								style="
+									overflow: hidden;
+									position: relative;
+									width: 3px;
+									height: 0px;
+									top: 4px;
+									left: 4px;
+								"
+							></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p style="color: gray; text-align: right">
+						<a href="http://mgharbi.com/">Website Credits</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
