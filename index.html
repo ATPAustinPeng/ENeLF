@@ -5,7 +5,7 @@
 
 		<meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-		<title>Real-Time Neural Light Field on Mobile Devices</title>
+		<title>Efficient Neural Light Field (ENeLF) for Mobile Devices</title>
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,7 +30,9 @@
 				<h2 class="col-md-12 text-center">
 					Efficient Neural Light Field (ENeLF) for Mobile Devices<br />
 				</h2>
-				<h3 class="col-md-12 text-center">CVPR 2023<br /></h3>
+				<h3 class="col-md-12 text-center">
+					Submitted to EVGA @ ISCA 2024<br />
+				</h3>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
@@ -111,7 +113,7 @@
 				</div>
 
 				<div class="col-md-8 col-md-offset-2">
-					<h4><i>Left Two:</i> Chair; <i>Right Two:</i> Drum.</h4>
+					<h4><i>chair (0%, 30%, 50%, 70% pruning; left to right)</h4>
 				</div>
 				<div class="col-md-8 col-md-offset-2">
 					<div class="col-md-6">
@@ -124,7 +126,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/chair_record_mp4.mp4"
+								src="videos/synthetic/baseline/chair.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -137,7 +139,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/chair.mp4"
+								src="videos/synthetic/pruned30/chair.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -152,7 +154,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/drum_record_mp4.mp4"
+								src="videos/synthetic/pruned50/chair.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -165,7 +167,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/drum.mp4"
+								src="videos/synthetic/pruned70/chair.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -175,9 +177,9 @@
 				<br /><br />
 
 				<div class="col-md-8 col-md-offset-2">
-					<h4><i>Left Two:</i> Ficus; <i>Right Two:</i> Lego.</h4>
+					<h4><i>drums (0%, 30%, 50%, 70% pruning; left to right)</h4>
 				</div>
-				<div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-md-offset-2">
 					<div class="col-md-6">
 						<video
 							id="v1"
@@ -188,7 +190,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/ficus_record_mp4.mp4"
+								src="videos/synthetic/baseline/drums.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -201,7 +203,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/ficus.mp4"
+								src="videos/synthetic/pruned30/drums.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -216,7 +218,7 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/hotdog_record_mp4.mp4"
+								src="videos/synthetic/pruned50/drums.mp4"
 								type="video/mp4"
 							/>
 						</video>
@@ -229,7 +231,135 @@
 							controls=""
 						>
 							<source
-								src="videos/synthetic/hotdog.mp4"
+								src="videos/synthetic/pruned70/drums.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+				</div>
+				<br />
+				<br /><br />
+
+                <div class="col-md-8 col-md-offset-2">
+					<h4><i>ficus (0%, 30%, 50%, 70% pruning; left to right)</h4>
+				</div>
+                <div class="col-md-8 col-md-offset-2">
+					<div class="col-md-6">
+						<video
+							id="v1"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/baseline/ficus.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v2"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned30/ficus.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+					<div class="col-md-6">
+						<video
+							id="v3"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned50/ficus.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v4"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned70/ficus.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+				</div>
+				<br />
+				<br /><br />
+
+                <div class="col-md-8 col-md-offset-2">
+					<h4><i>lego (0%, 30%, 50%, 70% pruning; left to right)</h4>
+				</div>
+                <div class="col-md-8 col-md-offset-2">
+					<div class="col-md-6">
+						<video
+							id="v1"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/baseline/lego.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v2"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned30/lego.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</div>
+					<div class="col-md-6">
+						<video
+							id="v3"
+							width="40%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned50/lego.mp4"
+								type="video/mp4"
+							/>
+						</video>
+						<video
+							id="v4"
+							width="38.2%"
+							autoplay=""
+							loop=""
+							muted=""
+							controls=""
+						>
+							<source
+								src="videos/synthetic/pruned70/lego.mp4"
 								type="video/mp4"
 							/>
 						</video>
